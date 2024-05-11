@@ -14,13 +14,15 @@ namespace app\admin\controller\system;
 
 
 use app\admin\model\SystemAdmin;
+use app\admin\model\Group;
 use app\admin\service\TriggerService;
 use app\common\constants\AdminConstant;
 use app\common\controller\AdminController;
 use EasyAdmin\annotation\ControllerAnnotation;
 use EasyAdmin\annotation\NodeAnotation;
 use think\App;
-
+use think\facade\Db;
+use think\facade\Env;
 /**
  * Class Admin
  * @package app\admin\controller\system
@@ -48,6 +50,10 @@ class Admin extends AdminController
      */
     public function index()
     {
+        group = new Group()
+        $mongoData = group->select();
+        echo 123;
+        var_dump( $mongoData );die();
         if ($this->request->isAjax()) {
             if (input('selectFields')) {
                 return $this->selectList();
