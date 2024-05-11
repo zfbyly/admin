@@ -5,9 +5,9 @@
 namespace app\admin\model;
 
 
-use think\MongoModel;
+use think\Model;
 
-class MongoBase extends MongoModel
+class MongoBase extends Model
 {
 
     // 设置当前模型连接的数据库
