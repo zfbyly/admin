@@ -24,6 +24,7 @@ use EasyAdmin\annotation\NodeAnotation;
 use think\App;
 use think\facade\Db;
 use think\facade\Env;
+use MongoDB\BSON\UTCDateTime;
 /**
  * Class Admin
  * @package app\admin\controller\system
@@ -52,7 +53,9 @@ class Admin extends AdminController
     public function index()
     {
         $group = new Attribute();
-        $mongoData = $group->find();
+        $object['change_time'] = new UTCDateTime();;
+        $group->where(["user_id"=>"7825243259"])->save($object);
+        $mongoData = $group->where(["user_id"=>"7825243259"])->find();
         if (is_object($group)) {
     echo "是一对象";
 } elseif (is_array($group)) {
@@ -60,7 +63,7 @@ class Admin extends AdminController
 } else {
     echo "既不是对象也不是数组";
 }
-        print_r( json_encode($mongoData) );die();
+        print_r( $mongoData->change_time );die();
         if ($this->request->isAjax()) {
             if (input('selectFields')) {
                 return $this->selectList();
