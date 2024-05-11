@@ -52,18 +52,6 @@ class Admin extends AdminController
      */
     public function index()
     {
-        $group = new Attribute();
-        $object['change_time'] = new UTCDateTime();;
-        $group->where(["user_id"=>"7825243259"])->save($object);
-        $mongoData = $group->where(["user_id"=>"7825243259"])->find();
-        if (is_object($group)) {
-    echo "是一对象";
-} elseif (is_array($group)) {
-   echo "是一个数组";
-} else {
-    echo "既不是对象也不是数组";
-}
-        print_r( $mongoData->change_time );die();
         if ($this->request->isAjax()) {
             if (input('selectFields')) {
                 return $this->selectList();

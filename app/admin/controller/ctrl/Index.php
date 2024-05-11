@@ -45,7 +45,7 @@ class Index extends AdminController
     {
         parent::__construct($app);
         $this->model = new Ctrl();
-        $this->assign('auth_list', $this->model->getAuthList());
+        //$this->assign('auth_list', $this->model->getAuthList());
     }
 
     /**
