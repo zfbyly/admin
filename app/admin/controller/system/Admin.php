@@ -15,6 +15,7 @@ namespace app\admin\controller\system;
 
 use app\admin\model\SystemAdmin;
 use app\admin\model\Group;
+use app\admin\model\Attribute;
 use app\admin\service\TriggerService;
 use app\common\constants\AdminConstant;
 use app\common\controller\AdminController;
@@ -50,10 +51,16 @@ class Admin extends AdminController
      */
     public function index()
     {
-        $group = new Group();
-        $mongoData = $group->select();
-        echo 123;
-        var_dump( $mongoData );die();
+        $group = new Attribute();
+        $mongoData = $group->find();
+        if (is_object($group)) {
+    echo "是一对象";
+} elseif (is_array($group)) {
+   echo "是一个数组";
+} else {
+    echo "既不是对象也不是数组";
+}
+        print_r( json_encode($mongoData) );die();
         if ($this->request->isAjax()) {
             if (input('selectFields')) {
                 return $this->selectList();
