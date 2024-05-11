@@ -58,7 +58,7 @@ return [
             'schema_cache_path' => app()->getRuntimePath() . 'schema' . DIRECTORY_SEPARATOR,
         ],
                 // 更多的数据库配置信息
-        'mongodb'=>[
+        'mongo'=>[
             // 数据库类型
             'type'              => Env::get('mongodatabase.type', ''),
             // 服务器地址
