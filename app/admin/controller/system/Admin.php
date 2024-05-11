@@ -50,7 +50,7 @@ class Admin extends AdminController
      */
     public function index()
     {
-        group = new Group()
+        group = new Group();
         $mongoData = group->select();
         echo 123;
         var_dump( $mongoData );die();
