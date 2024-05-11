@@ -50,8 +50,8 @@ class Admin extends AdminController
      */
     public function index()
     {
-        group = new Group();
-        $mongoData = group->select();
+        $group = new Group();
+        $mongoData = $group->select();
         echo 123;
         var_dump( $mongoData );die();
         if ($this->request->isAjax()) {
