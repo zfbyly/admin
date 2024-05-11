@@ -10,7 +10,7 @@
 // | github开源项目：https://github.com/zhongshaofa/EasyAdmin
 // +----------------------------------------------------------------------
 
-namespace app\admin\controller\Ctrl;
+namespace app\admin\controller\ctrl;
 
 
 
