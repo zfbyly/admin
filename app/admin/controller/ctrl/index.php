@@ -31,7 +31,7 @@ use MongoDB\BSON\UTCDateTime;
  * @package app\admin\controller\system
  * @ControllerAnnotation(title="管理员管理")
  */
-class Ctrl extends AdminController
+class Index extends AdminController
 {
 
     use \app\admin\traits\Curd;
