@@ -5,7 +5,7 @@
 namespace app\admin\model;
 
 
-use think\Model\MongoModel;
+use think\MongoModel;
 
 class MongoBase extends MongoModel
 {
